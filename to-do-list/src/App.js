@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import { Form } from './components/Form/Form';
+import { TaskList } from './components/TaskList/TaskList';
 
-function App() {
+export const App = () => {
+  const [taskList, setTaskList] = useState([])
   return (
-    <div>
-    </div>
+    <>
+      <Form 
+        saveTodo={todoText => {
+          if (todoText.length>0) {
+            setTaskList([...taskList, todoText])
+          }
+      }}/>
+      <TaskList 
+        taskList={taskList}
+        deleteTask={taskIndex => {
+          const newTasklist = taskList
+            .filter((_, idx) => idx !== taskIndex);
+            setTaskList(newTasklist)
+        }}/>
+    </>
   );
 }
-
-export default App;
