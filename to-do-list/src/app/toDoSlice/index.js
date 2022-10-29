@@ -9,11 +9,12 @@ export const toDoListSlice = createSlice({
     reducers: {
         addTask: (state, action) => {
             const addedTask = action.payload;
-            state.push({
-                id: nanoid(),
-                task: addedTask,
-                completed: false,
-            })
+            if (addedTask.length > 0) {
+                state.push({
+                    id: nanoid(),
+                    task: addedTask,
+                    completed: false,
+                })}
         },
         deleteTask: (state, action) => {
             const index = state.findIndex((todo) => todo.id === action.payload);

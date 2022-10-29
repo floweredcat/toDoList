@@ -6,12 +6,15 @@
     justify-content: space-between;
     margin: 0 auto;
     padding: 35px 10px 0 10px;
-    align-items: center;
+    align-items: flex-start;
+    overflow: hidden;
 }
 
 .taskComply {
     text-decoration: line-through;
+    text-overflow: ellipsis;
     opacity: 0.4;
+    height: 30px;
 }
 
 .button {
