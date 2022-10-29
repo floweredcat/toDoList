@@ -7,12 +7,7 @@ export const App = () => {
   const [taskList, setTaskList] = useState([])
   return (
     <>
-      <Form 
-        saveTodo={todoText => {
-          if (todoText.length>0) {
-            setTaskList([...taskList, todoText])
-          }
-      }}/>
+      <Form />
       <TaskList 
         taskList={taskList}
         deleteTask={taskIndex => {
