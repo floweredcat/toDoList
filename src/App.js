@@ -1,15 +1,20 @@
+import React, { useState } from 'react';
 import './App.css';
 import { Form } from './components/Form/Form';
-import { TasksList } from './components/TasksList/TasksList';
-import { useContext, React, useState } from 'react';
+import { TaskList } from './components/TaskList/TaskList';
 
 export const App = () => {
-  const {task, saveTask} = useState('');
-  const TaskContext = React.createContext()
+  const [taskList, setTaskList] = useState([])
   return (
-    <div>
-      <Form saveTask={saveTask}/>
-      <TasksList />
-    </div>
+    <>
+      <Form />
+      <TaskList 
+        taskList={taskList}
+        deleteTask={taskIndex => {
+          const newTasklist = taskList
+            .filter((_, idx) => idx !== taskIndex);
+            setTaskList(newTasklist)
+        }}/>
+    </>
   );
 }
