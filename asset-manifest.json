@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/floweredcat/toDoList/static/css/main.ee5ff1af.css",
+    "main.js": "/floweredcat/toDoList/static/js/main.1f9b72aa.js",
+    "static/media/checked-icon.svg": "/floweredcat/toDoList/static/media/checked-icon.d2bfe382b9bcf27826f15355dd0ccf64.svg",
+    "index.html": "/floweredcat/toDoList/index.html",
+    "main.ee5ff1af.css.map": "/floweredcat/toDoList/static/css/main.ee5ff1af.css.map",
+    "main.1f9b72aa.js.map": "/floweredcat/toDoList/static/js/main.1f9b72aa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ee5ff1af.css",
+    "static/js/main.1f9b72aa.js"
+  ]
+}
