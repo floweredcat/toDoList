@@ -4,8 +4,8 @@ import styles from "./styles.module.css"
 import { toDoListSliceActions } from "../../app/toDoSlice";
 import { useDispatch } from "react-redux";
 
-export const Form = () => {
-    const [value, setValue] = useState('');
+export const Form = ({task}) => {
+    const [value, setValue] = useState(task ? task : '');
     const dispatch = useDispatch();
     
     return (
@@ -26,14 +26,6 @@ export const Form = () => {
                     setValue(event.target.value);
                 }}
                 value={value}/>
-            {/* <button 
-                className={classNames(styles.button)}
-                disabled={!value}
-                type="submit" 
-                onSubmit={event => {
-                    event.preventDefault();
-                    saveTodo(value);
-                }}>Add task</button> */}
         </form>
     )
 }
