@@ -13,7 +13,11 @@ export const TaskList = () => {
     return (
         <ul className={classNames(styles.taskList)}>
             {taskList.toDoList.map((task) => (
-                <Task task={task.task} completed={task.completed} key={task.id} id={task.id}/>
+                <Task 
+                    task={task.task} 
+                    completed={task.completed} 
+                    key={task.id} 
+                    id={task.id}/>
             ))}
         </ul>
     )

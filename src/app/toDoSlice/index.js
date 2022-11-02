@@ -1,7 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
 
-const initialState = []
+const initialState = [{
+    id: nanoid(),
+    task: 'Create to-do list',
+    completed: true,
+}]
 
 export const toDoListSlice = createSlice({
     name: 'toDoList',
@@ -24,6 +28,11 @@ export const toDoListSlice = createSlice({
             const index = state.findIndex((todo) => todo.id === action.payload);
 
             state[index].completed = state[index].completed ? false : true;
+        },
+        editTask: (state, action) => {
+            const {id, value} = action.payload
+            const index = state.findIndex((todo) => todo.id === id);
+            state[index].task = value.length > 0 ? value : state.splice(index, 1);
         }
     }
 });
