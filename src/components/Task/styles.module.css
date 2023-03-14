@@ -5,9 +5,12 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 35px 10px 0 10px;
-    align-items: flex-start;
+    align-items: center;
+    height: 50px;
+    width: 540px;
+    justify-content: space-between;
     overflow: hidden;
+    cursor: grab;
 }
 
 .taskComply {
