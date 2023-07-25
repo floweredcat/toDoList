@@ -27,14 +27,6 @@ export const Form = () => {
         }}
         value={value}
       />
-      {/* <button 
-                className={classNames(styles.button)}
-                disabled={!value}
-                type="submit" 
-                onSubmit={event => {
-                    event.preventDefault();
-                    saveTodo(value);
-                }}>Add task</button> */}
     </form>
   );
 };
