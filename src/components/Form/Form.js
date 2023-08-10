@@ -1,5 +1,4 @@
 import { useState } from "react";
-import classNames from "classnames";
 import styles from "./styles.module.css";
 import { toDoListSliceActions } from "../../app/toDoSlice";
 import { useDispatch } from "react-redux";
@@ -13,18 +12,19 @@ export const Form = () => {
     dispatch(toDoListSliceActions.addTask({ addedTask: value }));
     setValue("");
   };
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
 
   return (
-    <form className={classNames(styles.form)} onSubmit={onSubmit}>
+    <form className={styles.form} onSubmit={onSubmit}>
       <input
         placeholder="Add task"
-        className={classNames(styles.input)}
+        className={styles.input}
         type="text"
         name="text"
         id="text"
-        onChange={(event) => {
-          setValue(event.target.value);
-        }}
+        onChange={handleChange}
         value={value}
       />
     </form>

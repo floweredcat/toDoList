@@ -5,16 +5,14 @@ import { TaskList } from "./components/TaskList/TaskList";
 
 export const App = () => {
   const [taskList, setTaskList] = useState([]);
+  const deleteTaskCallBack = (taskIndex) => {
+    const newTasklist = taskList.filter((_, idx) => idx !== taskIndex);
+    setTaskList(newTasklist);
+  };
   return (
     <>
       <Form />
-      <TaskList
-        taskList={taskList}
-        deleteTask={(taskIndex) => {
-          const newTasklist = taskList.filter((_, idx) => idx !== taskIndex);
-          setTaskList(newTasklist);
-        }}
-      />
+      <TaskList taskList={taskList} deleteTask={deleteTaskCallBack} />
     </>
   );
 };

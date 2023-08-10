@@ -12,9 +12,10 @@ export const Task = ({
   dragOverHandler,
   dragStartHandler,
 }) => {
-  console.log("render task" + task.text);
   const { id, completed, text } = task;
   const dispatch = useDispatch();
+  const handleClick = () => dispatch(toDoListSliceActions.complyTask(id));
+
   return (
     <li
       onDragStart={(e) => dragStartHandler(e, task)}
@@ -26,17 +27,11 @@ export const Task = ({
       })}
     >
       {text}
-      {/* {completed && <img 
-                src={Delete}
-                alt={Delete}
-                className={classNames(styles.button)}
-                onClick={() => dispatch(toDoListSliceActions.deleteTask(id))}
-                />} */}
       <img
         src={Checked}
         alt={Checked}
         className={classNames(styles.button)}
-        onClick={() => dispatch(toDoListSliceActions.complyTask(id))}
+        onClick={handleClick}
       />
     </li>
   );
